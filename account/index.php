@@ -460,8 +460,9 @@
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                     <h4 class="modal-title">+ Add Location</h4>
                                 </div>
-						<form class="form-signin" method="post" action="location.php" style="">
+						<form class="" method="post" action="location.php" style="">
 							<div style="margin-top: -5px; margin-bottom: 30px" ;="" id="message"></div>                       
+							<div class="form-signin">
              	<?php
 									$location['label'] = array('Unique identifier*','Address*','City/Town*','State*','Zip Code*');
 									$location['name'] = array('identifier1','address1','city1','state1','zip1');
@@ -480,15 +481,16 @@
 									}
 								}
 							?>
-          </form>
-
-					<div class="modal-footer" style="margin-top: 35px;">
+							</div>
+						 <div class="modal-footer" style="margin-top: 35px;">
 							<button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-							<button class="btn btn-warning" type="button" name="confirm" style="
+							<button id="addLocationSubmit" class="btn btn-warning" type="submit" name="confirm" style="
 									background-color: #5cc691;
 									border-color: #55b786;
 							"> Confirm</button>
                                 </div>
+						 </form>
+					
                             </div>
                         </div>
                     </div>

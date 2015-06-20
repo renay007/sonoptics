@@ -26,26 +26,26 @@
 
 	<!-- jQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!--
+
 	<script type="text/javascript">
-	$(document).ready(function(){
-			$('username').keyup(function()
+	jQuery(document).ready(function(){
+			jQuery('#username').keyup(function()
 			{
-				var checkname = $(this).val();
+				var checkname = jQuery(this).val();
 
 				var availname = remove_whitespaces(checkname);
 
 				if(availname !=''){
 
-					$('.check').show();
+					jQuery('.check').show();
 
-					$('.check').fadeIn(400).html('checking...'); //('<img src="image/ajax-loading.gif" /> ');
+					jQuery('.check').fadeIn(400).html('checking...'); //('<img src="image/ajax-loading.gif" /> ');
 
 //					<p style="text-align: justify;"></p>
 
 					var String = 'username='+ availname;
 
-					$.ajax({
+					jQuery.ajax({
 
 						type: "POST",
 
@@ -60,25 +60,25 @@
 							var result=remove_whitespaces(result);
 
 							if(result==''){
-								$('.check').html('This Username is available'); //('<img src="image/accept.png" /> This Username Is Avaliable');
-								$(".check").removeClass("red");
-								$('.check').addClass("green");
-								$(".username").removeClass("yellow");
-								$(".username").addClass("white");
+								jQuery('#check').html('This Username is available'); //('<img src="image/accept.png" /> This Username Is Avaliable');
+								jQuery("#check").removeClass("red");
+								jQuery('#check').addClass("green");
+								jQuery("#username").removeClass("yellow");
+								jQuery("#username").addClass("white");
 							}
 							else{
-								$('.check').html('This username is already taken'); //('<img src="image/error.png" /> This Username Is Already Taken');
-								$(".check").removeClass("green");
-								$('.check').addClass("red")
-								$(".username").removeClass("white");
-								$(".username").addClass("yellow");
+								$('#check').html('This username is already taken'); //('<img src="image/error.png" /> This Username Is Already Taken');
+								$("#check").removeClass("green");
+								$('#check').addClass("red")
+								$("#username").removeClass("white");
+								$("#username").addClass("yellow");
 							}
 						}
 					});
 
 				}
 				else{
-					$('.check').html('');
+					$('#check').html('');
 				}
 			});
 
@@ -95,7 +95,7 @@
 		}
 
 	</script>
--->
+
 	  <!-- Google Analytics -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -227,7 +227,7 @@
 								<label for="pass2" id="confirmMessage" class="confirmMessage"></label>	
 							</span>
               <label id="margin-bottom: 14px;" class="checkbox-custom check-success">
-                  <input type="checkbox" style="margin-right: 10px;" value="agree this condition" id="checkbox1" id="font-size: 14px;">
+                  <input type="checkbox" name="agree" style="margin-right: 10px;" value="agree this condition" id="checkbox1" id="font-size: 14px;">
 										<label for="checkbox1" id="terms">I agree to the Terms of Service and Privacy Policy
 										</label>
               </label>
@@ -240,6 +240,22 @@
                       Login
                   </a>                                                                                                                                                                                
               </div>
+<!--							<?php	
+		//									if(!isset($_POST['remember']))
+							{ 
+							?>
+									<script>
+									var check = document.getElementById('checkbox1');
+									var submit= document.getElementById('registerSubmit');
+									check.setAttribute("disabled");
+									submit.style.backgroundColor = lightblue;                                   
+									submit.style.borderColor = lightblue;
+									</script>
+							<?php
+							}
+	//						else{}
+							?> 
+-->
           </form>  
       </div>        
 </section1>	
