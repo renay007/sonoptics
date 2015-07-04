@@ -165,7 +165,7 @@
                         <ul class="child-list">
                             <li><a href="profile.html"> Profile</a></li>
                             <li><a href="invoice.html"> Invoice</a></li>
-                            <li><a href="login.html"> Login </a></li>
+                            <li><a href="login.php"> Login </a></li>
                             <li><a href="registration.html"> Registration </a></li>
                             <li><a href="lock.html"> Lock Screen </a></li>
                             <li><a href="404.html"> 404 Error</a></li>
@@ -428,7 +428,7 @@
                                         Help
                                     </a>
                                 </li>
-                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                                <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                             </ul>
                         </li>
                     </ul>

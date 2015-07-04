@@ -65,11 +65,9 @@ if(isset($_POST['confirm']))
 		if(!isset($result1))   
 		{
 			$found = 1;
-			echo "NOT YET";
 		}
 		else
 		{
-			echo "OH YEAH ".'<br>';
 			foreach($result1 as $check)
 			{
 				echo"check: ". $check['identifier']." info: ".$info['identifier'].'<br>';
@@ -80,7 +78,6 @@ if(isset($_POST['confirm']))
 				}
 				else
 				{
-					echo "WELL ";
 					$found = 1;
 				}
 			}
@@ -93,7 +90,6 @@ if(isset($_POST['confirm']))
 
 		if($found==1)
 		{
-			echo "SUCCESS";
 				try
 				{
 					$dbConnection2 = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser , $dbpass);
