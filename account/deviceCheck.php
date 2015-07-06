@@ -2,33 +2,40 @@
 ob_start();
 
 require_once 'functions.php';
+global $get;
+global $name;
+$info['encryptedEmail'] 	= $_COOKIE['email'];
+//$info['device_id'] 				= $_POST['identifier1'];
+//$info['device_location']  = $_POST['address1'];
 
-$info['encryptedEmail'] =  $_COOKIE['email'];
-/*
-$info['identifier']     = strtoupper($_POST['identifier1']);
-
-$address 								= explode(" ",$_POST['address1']);
-$newAddress 						= array_map('strtolower', $address);
-$newAddress 						= array_map('ucfirst', $newAddress);
-$info['address']        = implode(" ", $newAddress);
-
-$city		 								= explode(" ",$_POST['city1']);
-$newCity		 						= array_map('strtolower', $city);
-$newCity		 						= array_map('ucfirst', $newCity);
-$info['city']  		      = implode(" ", $newCity);
-
-$state	 								= explode(" ",$_POST['state1']);
-$newState		 						= array_map('strtolower', $state);
-$newState		 						= array_map('ucfirst', $newState);
-$info['state']		      = (count($state)==1)?(strtoupper($_POST['state1'])):(implode(" ", $newState));
-
-$info['zip_code']       = $_POST['zip1'];
-
+echo $name;
+//echo $info['device_id']; 
+//echo $info['device_location'];
+echo $get['loc'];
+//$info['identifier']     = strtoupper($_POST['identifier1']);
+//
+//$address 								= explode(" ",$_POST['address1']);
+//$newAddress 						= array_map('strtolower', $address);
+//$newAddress 						= array_map('ucfirst', $newAddress);
+//$info['address']        = implode(" ", $newAddress);
+//
+//$city		 								= explode(" ",$_POST['city1']);
+//$newCity		 						= array_map('strtolower', $city);
+//$newCity		 						= array_map('ucfirst', $newCity);
+//$info['city']  		      = implode(" ", $newCity);
+//
+//$state	 								= explode(" ",$_POST['state1']);
+//$newState		 						= array_map('strtolower', $state);
+//$newState		 						= array_map('ucfirst', $newState);
+//$info['state']		      = (count($state)==1)?(strtoupper($_POST['state1'])):(implode(" ", $newState));
+//
+//$info['zip_code']       = $_POST['zip1'];
+//
 $info['time_stamp']     = date('Y-m-d H:i:s');
+//
+//$id 										= explode(" ", $_POST['identifier1']);
+//$info['name']					 	=	strtolower(implode($id)); 
 
-$id 										= explode(" ", $_POST['identifier1']);
-$info['name']					 	=	strtolower(implode($id)); 
-*/
 
 /*
 if(isset($_POST['confirm']))
@@ -131,7 +138,7 @@ else
 	header("location: index.php?errConfirm");
 }
 */
-getLocation();
-print_r($locResult);
+//getLocation();
+//print_r($locResult);
 ob_flush();
 ?>

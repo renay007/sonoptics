@@ -353,6 +353,7 @@ function devices_header()
 	global $dbuser;
 	global $dbpass;
 	global $info;
+	global $result;
 	 try   
 	 {         
 			$dbConnection = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser , $dbpass);
@@ -366,6 +367,7 @@ function devices_header()
 			while($queryResult = $checkUserStmt->fetch(PDO::FETCH_ASSOC))     
 			{                                                      
 				$result[]=array("identifier"=>$queryResult['identifier'],
+												"location_name"=>$queryResult['location_name'],
 												"address"=>$queryResult['location_address'],
 												"city"=>$queryResult['location_city'],
 												"state"=>$queryResult['location_state'],                                                                                                      

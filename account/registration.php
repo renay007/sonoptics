@@ -245,7 +245,7 @@
 										</label>
               </label>
                        
-              <button id="registerSubmit" class="btn btn-lg btn-success btn-block" type="submit" name="Submit">Submit</button>
+              <button id="registerSubmit" class="btn btn-lg btn-success btn-block" type="submit" name="Submit" disabled="true">Submit</button>
 						
               <div class="registration m-t-20 m-b-20">
                   Already Registered.
@@ -317,6 +317,20 @@
   <!--Bootstrap Js--> 
   <script src="js/bootstrap.min.js"></script> 
 <!--  <script src="js/jrespond..min.js"></script> -->
+
+<script type="text/javascript">                      
+    jQuery('#checkbox1').change(function(){                  
+      if(this.checked)                               
+      {                                              
+        jQuery('#registerSubmit').removeAttr("disabled");
+      }
+      else
+      {                                              
+        jQuery('#registerSubmit').prop("disabled","true");
+      }
+    });
+</script>
+
 
 </body>
 
