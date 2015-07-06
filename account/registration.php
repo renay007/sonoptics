@@ -253,22 +253,6 @@
                       Login
                   </a>                                                                                                                                                                                
               </div>
-<!--							<?php	
-		//									if(!isset($_POST['remember']))
-							{ 
-							?>
-									<script>
-									var check = document.getElementById('checkbox1');
-									var submit= document.getElementById('registerSubmit');
-									check.setAttribute("disabled");
-									submit.style.backgroundColor = lightblue;                                   
-									submit.style.borderColor = lightblue;
-									</script>
-							<?php
-							}
-	//						else{}
-							?> 
--->
           </form>  
       </div>        
 </section1>	

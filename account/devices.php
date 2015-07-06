@@ -462,17 +462,22 @@
 							<div class="modal-content">
 																	<div class="modal-header">
 																			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-																			<h4 class="modal-title">+ Add Location</h4>
+																			<h4 class="modal-title">+ Add Device</h4>
 																	</div>
-							<form method="post" action="device_config.php" name="location">
+							<form method="post" action="deviceCheck.php" name="location">
 								<div style="margin-top: -5px; margin-bottom: 30px" ;="" id="message"></div>                       
 								<div class="form-signin">
-															<input type="text" id="identifier1" name="identifier1" class="registrationBox form-control" placeholder="Unique identifier*" autofocus="" style="background-color: transparent;border-color: #55b786;color: black;" required="">
-															<input type="text" id="address1" name="address1" class="registrationBox form-control" placeholder="Address*" autofocus="" style="background-color: transparent;border-color: #55b786;color: black;" required="">
-															<input type="text" id="city1" name="city1" class="registrationBox form-control" placeholder="City/Town*" autofocus="" style="background-color: transparent;border-color: #55b786;color: black;" required="">
-															<input type="text" id="state1" name="state1" class="registrationBox form-control" placeholder="State*" autofocus="" style="background-color: transparent;border-color: #55b786;color: black;" required="">
-															<input type="text" id="zip1" name="zip1" class="registrationBox form-control" placeholder="Zip Code*" autofocus="" style="background-color: transparent;border-color: #55b786;color: black;" required="">
-															</div>
+										<input type="text" id="identifier1" name="identifier1" class="registrationBox form-control" placeholder="Unique ID*" autofocus style="background-color: transparent;border-color: #55b786;color: black;" required="">
+										<input type="text" id="address1" name="address1" class="registrationBox form-control" placeholder="Specific Location*" style="background-color: transparent;border-color: #55b786;color: black;" required="">
+										<div class="form-group" id="toastTypeGroup">
+													<div class="radio-custom radio-primary">
+															<input type="radio" checked="" name="toasts" value="wi-fi" id="success">
+															<label for="success">Wi-Fi</label>
+															<input type="radio" name="toasts" value="bluetooth" id="info-t">
+															<label for="info-t" style="float: right;">Bluetooth</label>
+													</div>
+										 </div>
+								</div>
 								<div class="modal-footer" style="margin-top: 35px;">
 								<button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
 								<button id="addLocationSubmit" class="btn btn-warning" type="submit" name="confirm" style="
@@ -486,15 +491,29 @@
 											</div>
 									</div>							
 							</div>
-						<!--
-							<div class="panel-body">
-								<button type="button" class="btn btn-success"
-								style="float: right;"><i class="fa fa-plus"></i>
-								Add Device
-								</button>
-							</div> --> <!-- End div panel-body -->
 							<div class="row">    
-								<?php loadDevices();?>
+								<?php 
+									loadDevices();
+									$good = 0;
+									$bad = 0;
+									if(!$result)
+									{}
+									else
+									{
+										foreach($result as $get_info)
+										{
+												if($get_info['device_status'] == 1)
+												{
+														++$good;
+												}
+												else
+												{
+														++$bad;
+												}
+										}
+									}
+									update_location($good,$bad);
+								?>
 							</div> <!-- End div row -->
             </div> <!-- End div wrapper -->
             <!--body wrapper end-->

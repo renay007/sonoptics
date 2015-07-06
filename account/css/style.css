@@ -3042,7 +3042,7 @@ h2.form-heading {
 
 .radio-custom.radio-primary input[type=radio]:checked + label:before,
 .checkbox-custom.check-primary input[type=checkbox]:checked + label:before{
-    border-color: #8f67b1;
+    border-color: #5cc691;
 }
 
 .radio-custom.radio-info input[type=radio]:checked + label:before,
