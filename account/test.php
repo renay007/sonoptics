@@ -1,7 +1,9 @@
 <?php
 
-//require_once('functions.php');
-//$info['encryptedEmail'] = $_COOKIE['email'];
+require_once('functions.php');
+$info['encryptedEmail'] = $_COOKIE['email'];
+loadDevices();
+print_r($result);
 ?>
 <html>
 <head>

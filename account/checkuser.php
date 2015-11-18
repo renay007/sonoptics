@@ -45,7 +45,7 @@ else
 			$homepage = explode('/',$_SERVER['SCRIPT_NAME']);
 			$homepage = $homepage[1];
 			createsessions($queryResult);
-			header("location: /$homepage/index.php");
+			header("location: /$homepage/account/index.php");
 			break;
 		default:
 			clearsessionscookies();

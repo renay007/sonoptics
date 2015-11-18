@@ -3,7 +3,6 @@
   require_once('functions.php');
   isGoodUser();
   $info['encryptedEmail'] = $_COOKIE['email'];
-	$get['loc'] = $_GET['loc'];
 ?>
 
 <!DOCTYPE html>
@@ -447,19 +446,8 @@
                 </h3>
                 		<a href="index.php">
 											<span class="sub-title">
-											<?php 
-													devices_header();
-													if(!$result){}
-													else
-													{
-														foreach($result as $get_info)
-														{
-															$name = $get_info['location_name'];
-														}
-													}
-												?></span>
+											<?php devices_header();?></span>
 										</a>
-										<?php echo $name;?>
             </div>
 						
             <!-- page head end-->
@@ -477,7 +465,7 @@
 																			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 																			<h4 class="modal-title">+ Add Device</h4>
 																	</div>
-							<form method="post" action="devices.php?loc=<?php echo $name;?>" name="location">
+							<form method="post" action="deviceCheck.php?loc=<?php echo $name;?>" name="location">
 								<div style="margin-top: -5px; margin-bottom: 30px" ;="" id="message"></div>                       
 								<div class="form-signin">
 										<input type="text" id="identifier1" name="identifier1" class="registrationBox form-control" placeholder="Unique ID*" autofocus style="background-color: transparent;border-color: #55b786;color: black;">
@@ -505,57 +493,28 @@
 											</div>
 									</div>							
 							</div>
-							 <!-- PHP code once form is submitted -->
-							 <?php
-								$info['device_id']        = $_POST['identifier1'];
-								$info['device_location']  = $_POST['address1'];		
-								$info['time_stamp']     = date('Y-m-d H:i:s');  
-							echo $info['device_id'];
-							echo $info['device_location'];	
-							echo $name;
-							echo $info['time_stamp'];
-							echo isset($_POST['confirm']);
-
-								if(isset($_POST['confirm']))
-								{ 
-									if( empty($_POST['identifier1']) || empty($_POST['address1'])) 
-									{
-										header("location: index.php?loc=home&errLocation");
-									}
-									else
-									{  
-										/*                                                                                                                                                                
-										try   
-										{}
-										catch{}
-										*/
-									}
-								} 
-
-							 ?>
-							 <!-- End of PHP code -->
 							<div class="row">    
 								<?php 
 									loadDevices();
-									$good = 0;
-									$bad = 0;
-									if(!$result)
-									{}
-									else
-									{
-										foreach($result as $get_info)
-										{
-												if($get_info['device_status'] == 1)
-												{
-														++$good;
-												}
-												else
-												{
-														++$bad;
-												}
-										}
-									}
-									update_location($good,$bad);
+//									$good = 0;
+//									$bad = 0;
+//									if(!$result)
+//									{}
+//									else
+//									{
+//										foreach($result as $get_info)
+//										{
+////												if($get_info['device_status'] == 1)
+////												{
+//														++$good;
+//	//											}
+////												else
+//	//											{
+//		//												++$bad;
+//			//									}
+//										}
+//									}
+//									update_location($good,$bad);
 								?>
 							</div> <!-- End div row -->
             </div> <!-- End div wrapper -->
